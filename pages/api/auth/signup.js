@@ -1,4 +1,4 @@
-import connectToDatabase from "../../../lib/db";
+import {connectToDatabase} from "../../../lib/db";
 import {hashPassword} from "./auth";
 
 async function handler(req, res) {
@@ -38,6 +38,7 @@ async function handler(req, res) {
     });
 
     res.status(201).json({message: "Created user!"});
+    console.log("result", email);
     client.close();
   }
 }
